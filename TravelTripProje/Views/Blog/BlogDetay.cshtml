@@ -1,7 +1,6 @@
-﻿@using TravelTripProje.Models.Siniflar;
-@model List<Blog>
+﻿
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "BlogDetay";
     Layout = "~/Views/Shared/_TestLayout.cshtml";
 }
 
@@ -14,6 +13,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE HTML>
 <html>
 <head>
+    <title>Personal Blog a Blogging Category Flat Bootstarp  Responsive Website Template | Single :: w3layouts</title>
     <link href="~/web2/css/bootstrap.css" rel='stylesheet' type='text/css' />
     <link href="~/web2/css/style.css" rel='stylesheet' type='text/css' />
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -24,36 +24,62 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <!----webfonts---->
     <link href='http://fonts.googleapis.com/css?family=Oswald:100,400,300,700' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,300italic' rel='stylesheet' type='text/css'>
+    <!----//webfonts---->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <!--end slider -->
+
 </head>
 <body>
     <!---header---->
     <div class="header">
-        <div class="container">
-            <div class="clearfix"></div>
-        </div>
     </div>
     <!--/header-->
     <div class="single">
         <div class="container">
             <div class="col-md-8 single-main">
-                @foreach (var x in Model)
-                {
                 <div class="single-grid">
-
-                    <img src="@x.BlogImage" alt="" style="margin-bottom:20px"/>
-                    <a href="/Blog/BlogDetay/@x.ID">@x.Baslik</a>
+                    <img src="~/web2/images/post1.jpg" alt="" />
                     <p>
-                        @x.Aciklama
+                        Blog Detay Sayfasına Hoş Geldiniz.
+
                     </p>
                 </div>
-                <br /><br />
-                }
+                <ul class="comment-list">
+                    <li>
+                        <img src="~/web2/images/avatar.png" class="img-responsive" alt="">
+                        <div class="desc">
+                            <p>Ferhan Yeşilyurt: Yorum Yaptı. <a href="#" title="Posts by admin" rel="author">admin</a></p>
+                        </div>
+                        <div class="clearfix"></div>
+                    </li>
+                </ul>
 
+                <ul class="comment-list">
+                    <li>
+                        <img src="~/web2/images/avatar.png" class="img-responsive" alt="">
+                        <div class="desc">
+                            <p>Ferhan Yeşilyurt: Yorum Yaptı. <a href="#" title="Posts by admin" rel="author">admin</a></p>
+                        </div>
+                        <div class="clearfix"></div>
+                    </li>
+                </ul>
+
+
+                <div class="content-form">
+                    <h3>Leave a comment</h3>
+                    <form>
+                        <input type="text" placeholder="Name" required />
+                        <input type="text" placeholder="Email" required />
+                        <input type="text" placeholder="Phone" required />
+                        <textarea placeholder="Message"></textarea>
+                        <input type="submit" value="SEND" />
+                    </form>
+                </div>
             </div>
 
             <div class="col-md-4 side-content">
                 <div class="recent">
-                    <h3>Son Bloglar</h3>
+                    <h3>RECENT POSTS</h3>
                     <ul>
                         <li><a href="#">Aliquam tincidunt mauris</a></li>
                         <li><a href="#">Vestibulum auctor dapibus  lipsum</a></li>
@@ -62,7 +88,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     </ul>
                 </div>
                 <div class="comments">
-                    <h3>Son Yorumlar</h3>
+                    <h3>RECENT COMMENTS</h3>
                     <ul>
                         <li><a href="#">Amada Doe </a> on <a href="#">Hello World!</a></li>
                         <li><a href="#">Peter Doe </a> on <a href="#"> Photography</a></li>
@@ -73,9 +99,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             <div class="clearfix"></div>
         </div>
     </div>
-</body>
+    </body>
 </html>
-
 
 
 
