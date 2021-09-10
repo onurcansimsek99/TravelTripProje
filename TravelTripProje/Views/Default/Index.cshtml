@@ -1,4 +1,5 @@
-﻿
+﻿@using TravelTripProje.Models.Siniflar
+@model List<Blog>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_TestLayout.cshtml";
@@ -17,14 +18,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         <div class="wrap">
             <div class="banner">
                 <div class="indent">
-                    <h2 class="indent-left margin-bot">Plan the Easy Trip</h2>
+                    <h2 class="indent-left margin-bot">Work And Travel Rehberi</h2>
                     <div class="banner-left">
                         <div class="con-text">
                             <div class="grid1-img">
                                 <img src="~/web/images/glass.png" alt="">
                             </div>
                             <div class="grid1-desc">
-                                <p>Restaurants</p>
+                                <p>Restoranlar</p>
                             </div>
                             <div class="clear"></div>
                         </div>
@@ -33,7 +34,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                 <img src="~/web/images/flight.png" alt="">
                             </div>
                             <div class="grid1-desc">
-                                <p>Flights</p>
+                                <p>Uçuşlar</p>
                             </div>
                             <div class="clear"></div>
                         </div>
@@ -42,7 +43,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                 <img src="~/web/images/group.png" alt="">
                             </div>
                             <div class="grid1-desc">
-                                <p>Things to do</p>
+                                <p>Yapılacak Şeyler</p>
                             </div>
                             <div class="clear"></div>
                         </div>
@@ -51,7 +52,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                 <img src="~/web/images/key.png" alt="">
                             </div>
                             <div class="grid1-desc">
-                                <p>Vacation Rents</p>
+                                <p>Araba Kiralama</p>
                             </div>
                             <div class="clear"></div>
                         </div>
@@ -59,12 +60,16 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     </div>
                     <div class="header_bottom_right_images">
 
-                        <div class="slider">
+                        <div class="slider" style="width:600px; height:400px;">
                             <ul class="rslides" id="slider1">
-                                <li><img src="~/web/images/img1.jpg" alt=""></li>
-                                <li><img src="~/web/images/img2.jpg" alt=""></li>
-                                <li><img src="~/web/images/img3.jpg" alt=""></li>
-                                <li><img src="~/web/images/img4.jpg" alt=""></li>
+                                @foreach (var x in Model)
+                                {
+                                    <li><img src="@x.BlogImage" alt=""></li>
+                                    @*<li><img src="~/web/images/img2.jpg" alt=""></li>
+                                    <li><img src="~/web/images/img3.jpg" alt=""></li>
+                                    <li><img src="~/web/images/img4.jpg" alt=""></li>*@
+                                }
+
                             </ul>
                         </div>
                     </div>
@@ -78,46 +83,16 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         <div class="wrap">
             <div class="wrapper">
                 <div class="con-top">
-                    <h3>Welcome to our Travel Company!</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facil</p>
-                </div>
-                <div class="con-bot">
-                    <div class="left">
-                        <div class="bot-left">
-                            <img src="~/web/images/pic.jpg" alt="" />
-                        </div>
-                        <div class="left-text">
-                            <h4>Lorem ipsum dolor sit amet, conte adipiscing elit dolor sit amet</h4>
-                            <span class="doller">$1024.99</span>
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismo</p>
-                            <p><a href="#"><span class="read">Read More >></span></a></p>
-                        </div>
-                    </div>
-                    <div class="left">
-                        <div class="bot-left">
-                            <img src="~/web/images/pic1.jpg" alt="" />
-                        </div>
-                        <div class="left-text">
-                            <h4>Lorem ipsum dolor sit amet, conte adipiscing elit dolor sit amet</h4>
-                            <span class="doller">$900.99</span>
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismo</p>
-                            <p><a href="#"><span class="read">Read More >></span></a></p>
-                        </div>
-                    </div>
-                    <div class="right">
-                        <div class="bot-left">
-                            <img src="~/web/images/pic2.jpg" alt="" />
-                        </div>
-                        <div class="left-text">
+                    <h3>Work And Travel Bilgilendirme Bloğuma Hoşgeldiniz!</h3>
 
-                            <h4>Lorem ipsum dolor sit amet, conte adipiscing elit dolor sit amet</h4>
-                            <span class="doller">$924.99</span>
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismo</p>
-                            <p><a href="#"><span class="read">Read More >></span></a></p>
-                        </div>
-                    </div>
-                    <div class="clear"></div>
+                    <p>Herkese merhaba. Adım Onurcan Şimşek. Bilgisayar Mühendisliği son sınıf öğrencisiyim.
+                    2019 yılında Work And Travel programına katıldım. Bu projeyi hem Work and Travel programı
+                    hakkında bilgi sahibi olmak isteyenler için ve aynı zamanda yazılım konusunda kendimi
+                    geliştirebilmek için yapıyorum.Tecrübelerimi size aktarabilmek için kendi yapmış olduğum
+                    Mvc5 üzerine kurulu dinamik web projesidir.Murat Yücedağ hocama burdan bol selamlar!</p>
+
                 </div>
+                @Html.Action("Partial1","Default")            <!-- Önce Partial'ın ismi , sonra controller'ın ismi-->
                 <div class="grids">
                     <div class="box1">
                         <div class="padding">
