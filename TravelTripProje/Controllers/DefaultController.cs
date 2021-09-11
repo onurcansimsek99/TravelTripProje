@@ -14,7 +14,7 @@ namespace TravelTripProje.Controllers
         public ActionResult Index()
         {
 
-            var degerler = c.Blogs.ToList();
+            var degerler = c.Blogs.Take(4).ToList();
             return View(degerler);
         }
 
@@ -32,6 +32,12 @@ namespace TravelTripProje.Controllers
         public PartialViewResult Partial2()
         {
             var deger = c.Blogs.Where(x => x.ID == 1).ToList();
+            return PartialView(deger);
+        }
+
+        public PartialViewResult Partial3()
+        {
+            var deger = c.Blogs.ToList();
             return PartialView(deger);
         }
 
