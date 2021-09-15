@@ -37,9 +37,19 @@ namespace TravelTripProje.Controllers
 
         public PartialViewResult Partial3()
         {
-            var deger = c.Blogs.ToList();
+            var deger = c.Blogs.Take(10).ToList();
+            return PartialView(deger);
+        }
+        public PartialViewResult Partial4()
+        {
+            var deger = c.Blogs.Take(3).ToList();
             return PartialView(deger);
         }
 
+        public PartialViewResult Partial5()
+        {
+            var deger = c.Blogs.Take(3).OrderByDescending(x => x.ID).ToList();         // id ye göre sondan başa doğru sırala 
+            return PartialView(deger);
+        }
     }
 }
