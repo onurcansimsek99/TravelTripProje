@@ -61,17 +61,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         </li>
                     </ul>
                 }
-
-
-                <div class="content-form">
-                    <h3>Bir Yorum Yapın</h3>
-                    <form>
-                        <input type="text" placeholder="Kullanıcı Adı" required />
-                        <input type="text" placeholder="Mail Adresi" required />
-                        <textarea placeholder="Yorum"></textarea>
-                        <input type="submit" value="Gönder" />
-                    </form>
-                </div>
+                @Html.Action("YorumYap","Blog")
             </div>
 
             <div class="col-md-4 side-content">
